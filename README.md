@@ -1,0 +1,2 @@
+# Asuntohintalaskuri
+Kurssin sovelluskehitysprojekti sovellus.
