@@ -1,0 +1,9 @@
+{
+  "name": "asuntohintalaskuri",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "ml-regression-multivariate-linear": "^2.0.4",
+    "papaparse": "^5.7.0"
+  }
+}
