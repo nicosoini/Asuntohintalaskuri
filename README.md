@@ -81,4 +81,4 @@ Missä:
 - X₂ = huoneiden määrä
 - X₃ = rakennusvuosi
 - ...
-- X₁₃ = tontin arvo
+- X₁₃ = tontin
