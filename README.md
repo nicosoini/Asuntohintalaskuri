@@ -61,3 +61,24 @@ Malli löytyy tiedostosta [algoritmi.js](https://github.com/nicosoini/Asuntohint
 Molemmat funktiot ovat importattu ja käytössä [index.js](https://github.com/nicosoini/Asuntohintalaskuri/blob/main/index.js) tiedostossa.  
 
 Koneoppimismallin luomisessa on hyödynnetty Google Gemini -tekoälyä. Tekoälyä on hyödynnetty kirjaston käytön ymmärtämisessä sekä käyttötilanteen yhteensovittamisessa (x ja y matriisien käyttö asuntohintalaskuri käyttötilanteessa)
+
+multivariate linear regressio mallin perusperiaate:
+
+![regression laskukaava](https://github.com/nicosoini/Asuntohintalaskuri/blob/main/kuvat/ML-mallin-laskukaava.png)
+
+- β₀ = vakiotermi / lähtöarvo
+- β₁ = muuttujan kerroin (pinta-ala)
+- β₂ = muuttujan kerroin (huoneita)
+- β₃ = muuttujan kerroin (rakennusvuosi)
+- ...
+- β₁₃ = muuttujan kerroin (tontti)
+
+Regressio laskee opetusdatasta mallille sopivat kertoimet. Tämän jälkeen hintaennuste lasketaan kaavalla:  
+hinta = β₀ + β₁X₁ + β₂X₂ + β₃X₃ ... + β₁₃X₁₃
+
+Missä:
+- X₁ = pinta-alan arvo
+- X₂ = huoneiden määrä
+- X₃ = rakennusvuosi
+- ...
+- X₁₃ = tontin arvo
