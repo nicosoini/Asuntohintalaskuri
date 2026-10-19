@@ -1,0 +1,51 @@
+/* Alatunniste pysyy sivun alareunassa, vaikka sisältöä on vähän */
+.page-contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-contact main {
+  flex: 1;
+}
+
+/* Kapea kortti keskellä */
+.contact-card {
+  width: min(36rem, calc(100% - 2rem));
+  max-width: none;
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  text-align: center;
+}
+
+.contact-card h1 {
+  color: var(--blue);
+  font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.contact-card address {
+  font-style: normal;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-card p {
+  font-size: clamp(1.05rem, 1rem + 0.5vw, 1.25rem);
+  overflow-wrap: anywhere;   /* pitkä sähköposti ei ylitä korttia pienellä näytöllä */
+}
+
+.contact-card a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+.contact-card a:hover {
+  color: var(--blue-dark);
+}
+
+.contact-card a:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
