@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
+    "bootstrap": "^6.0.0-alpha.1",
     "ml-regression-multivariate-linear": "^2.0.4",
     "papaparse": "^5.7.0"
   }

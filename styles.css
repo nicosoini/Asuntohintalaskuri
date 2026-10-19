@@ -11,6 +11,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+html {
+    font-size: clamp(1.0625rem, 0.95 + 0.5vw, 1.25rem);
+}
+
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -36,16 +40,26 @@ a:focus-visible, .btn:focus-visible {
 }
 
 .logo {
+    display: flex;
+    height: 10rem;
+    width: auto;
+}
+
+.logo-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--text);
   text-decoration: none;
+  min-width: 0;
 }
 
-.logo-icon { width: 2rem; height: 2rem; color: var(--blue); }
+.site-name {
+    margin: 0;
+    font-size: clamp(1rem, 0.9rem + 1vw, 1.4rem);
+    font-weight: 600;
+}
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -71,12 +85,19 @@ a:focus-visible, .btn:focus-visible {
   overflow: hidden;
   display: grid;
   place-items: center;
-  padding: 2rem 1rem;
-  /* Vaihda kuva omaasi: aseta tiedosto kansioon images/ */
+  padding: 8rem 1rem;
+  /* Vaihda kuva: aseta tiedosto kansioon images/ */
   background:
     linear-gradient(rgba(10, 30, 45, 0.45), rgba(10, 30, 45, 0.45)),
     url("images/hero.jpg") center / cover no-repeat,
     #35566b;
+}
+
+.hero-logo {
+    display: flex;
+    height: 15rem;
+    width: auto;
+    /* mix-blend-mode: multiply; */
 }
 
 .hero-content {
@@ -89,8 +110,9 @@ a:focus-visible, .btn:focus-visible {
   gap: 1.5rem;
 }
 
-.hero-icon { width: 5rem; height: 5rem; color: var(--blue); }
-.hero-content p { font-weight: 600; font-size: 1.05rem; }
+.hero-text {
+    padding: 2rem 1rem;
+}
 
 /* ---------- Cards ---------- */
 .card {
