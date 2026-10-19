@@ -68,13 +68,20 @@ a:focus-visible, .btn:focus-visible {
   background: var(--blue);
   color: #fff;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-decoration: none;
   border-radius: 8px;
   transition: background 0.15s;
 }
-.btn:hover { background: var(--blue-dark); }
-.btn-small { padding: 0.5rem 1.25rem; font-size: 0.8rem; border-radius: 999px; }
+.btn:hover { 
+    background: var(--blue-dark);
+}
+
+.btn-small {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    border-radius: 999px;
+}
 
 /* ---------- Hero ---------- */
 .hero {
@@ -112,12 +119,14 @@ a:focus-visible, .btn:focus-visible {
 
 .hero-text {
     padding: 2rem 1rem;
+    font-size: clamp(1.1rem, 1rem + 1vw, 1.5rem);
 }
 
 /* ---------- Cards ---------- */
 .card {
   max-width: var(--max);
-  margin: 3rem auto 0;
+  margin-block: 3rem 0;
+  margin-inline: clamp(1rem, 5vw, 3rem);
   padding: clamp(1.5rem, 4vw, 2.5rem);
   background: #fff;
   border: 1px solid var(--blue-border);
@@ -129,7 +138,7 @@ main > .card:last-child { margin-bottom: 3rem; }
 .card h2 {
   text-align: center;
   color: var(--blue);
-  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
   font-weight: 600;
   margin-bottom: 2rem;
 }
@@ -153,12 +162,20 @@ main > .card:last-child { margin-bottom: 3rem; }
   content: counter(step) ".";
   display: block;
   color: var(--blue);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 
-.steps h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
-.steps p { font-size: 0.9rem; color: var(--muted); }
+.steps h3 {
+    font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.steps p {
+    font-size: 1rem;
+    color: var(--muted);
+}
 
 /* Factors */
 .factors {
@@ -169,20 +186,34 @@ main > .card:last-child { margin-bottom: 3rem; }
 
 .factors h3 {
   color: var(--blue);
-  font-size: 1.15rem;
+    font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
   font-weight: 600;
   margin-bottom: 0.4rem;
 }
 
-.factors p, .factors li { font-size: 0.9rem; color: var(--muted); }
-.factors p + p { margin-top: 0.4rem; }
-.factors strong { color: var(--text); }
-.factors ul { list-style: none; padding: 0; margin-top: 0.4rem; }
+.factors p, .factors li {
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.factors p + p {
+    margin-top: 0.4rem;
+}
+
+.factors strong {
+    color: var(--text);
+}
+
+.factors ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.4rem;
+}
 
 /* ---------- Footer ---------- */
 .site-footer {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--muted);
   padding: 1.5rem 1rem 2rem;
 }
@@ -196,4 +227,8 @@ main > .card:last-child { margin-bottom: 3rem; }
 
 @media (prefers-reduced-motion: reduce) {
   .btn { transition: none; }
+}
+
+@media (min-width: 1100px) {
+  .card { margin-inline: auto; }
 }
