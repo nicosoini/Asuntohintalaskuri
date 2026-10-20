@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --blue: #12a4c8;
   --blue-dark: #0d7f9c;
   --blue-border: #bfe6f0;
@@ -12,7 +13,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-    font-size: clamp(1.0625rem, 0.95 + 0.5vw, 1.25rem);
+  font-size: clamp(1.0625rem, 0.95rem + 0.5vw, 1.25rem);
 }
 
 body {
