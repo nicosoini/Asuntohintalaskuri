@@ -94,11 +94,58 @@ a:focus-visible, .btn:focus-visible {
   display: grid;
   place-items: center;
   padding: 8rem 1rem;
-  /* Vaihda kuva: aseta tiedosto kansioon images/ */
-  background:
-    linear-gradient(rgba(10, 30, 45, 0.45), rgba(10, 30, 45, 0.45)),
-    url("images/hero.jpg") center / cover no-repeat,
-    #35566b;
+  background: #0d7f9c
+}
+/* Slides */
+.hero-slides { position: absolute; inset: 0; z-index: 0; }
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.hero-slide.is-active { opacity: 1; }
+
+/* Dark overlay (replaces the old gradient) */
+.hero-slides::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 30, 45, 0.45);
+}
+
+/* Content above slides */
+.hero-content { position: relative; z-index: 2; }
+
+
+/* Dots */
+.hero-dots {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 0.6rem;
+}
+.hero-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.hero-dot.is-active { background: #fff; }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide { transition: none; }
 }
 
 .hero-logo {
