@@ -42,7 +42,7 @@ a:focus-visible, .btn:focus-visible {
 
 .logo {
     display: flex;
-    height: 10rem;
+    height: 5rem;
     width: auto;
 }
 
@@ -79,9 +79,9 @@ a:focus-visible, .btn:focus-visible {
 }
 
 .btn-small {
-    padding: 0.5rem 1.25rem;
+    padding: 1.5rem 1.25rem;
     font-size: 0.9rem;
-    border-radius: 999px;
+
 }
 
 /* ---------- Hero ---------- */
@@ -115,7 +115,7 @@ a:focus-visible, .btn:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(10, 30, 45, 0.45);
+  background: rgba(22, 50, 70, 0.75);
 }
 
 /* Content above slides */
@@ -265,12 +265,49 @@ main > .card:last-child { margin-bottom: 3rem; }
   color: var(--muted);
   padding: 1.5rem 1rem 2rem;
 }
+.logo img {
+  height: 100%;
+  width: auto;
+}
+
+.site-header .btn-small {
+  flex-shrink: 0;       /* button never gets squished */
+  text-align: center;
+  line-height: 1.2;
+}
+
+.card {
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 14px 36px rgba(18, 164, 200, 0.22);
+  }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
   .steps, .factors { grid-template-columns: 1fr; }
-  .site-header .btn-small { padding: 0.45rem 0.9rem; }
-  .logo span { font-size: 0.85rem; }
+
+  .site-header {
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo { height: 4rem; }          /* was 10rem, too big for phones */
+
+  .site-name { font-size: 1rem; }
+
+  .site-header .btn-small {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.8rem;
+    max-width: 8.5rem;             /* text wraps to 2 lines instead of overflowing */
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
