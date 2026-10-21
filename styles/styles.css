@@ -33,16 +33,22 @@ a:focus-visible, .btn:focus-visible {
 
 /* ---------- Header ---------- */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  box-shadow: 0 6px 24px rgba(3, 60, 75, 0.15);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.75rem clamp(1rem, 4vw, 3rem);
+  padding: 0.4rem clamp(1rem, 4vw, 3rem);
 }
 
 .logo {
     display: flex;
-    height: 5rem;
+    height: 3rem;
     width: auto;
 }
 
@@ -58,8 +64,9 @@ a:focus-visible, .btn:focus-visible {
 
 .site-name {
     margin: 0;
-    font-size: clamp(1rem, 0.9rem + 1vw, 1.4rem);
+    font-size: clamp(1rem, 0.9rem + 1vw, 1.2rem);
     font-weight: 600;
+    color: #5b88a0;
 }
 
 /* ---------- Buttons ---------- */
@@ -79,7 +86,7 @@ a:focus-visible, .btn:focus-visible {
 }
 
 .btn-small {
-    padding: 1.5rem 1.25rem;
+    padding: 1.0rem 1.25rem;
     font-size: 0.9rem;
 
 }
@@ -87,6 +94,7 @@ a:focus-visible, .btn:focus-visible {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
+  width: auto;
   min-height: 420px;
   margin: 0 clamp(1rem, 4vw, 3rem);
   border-radius: var(--radius);
@@ -168,6 +176,7 @@ a:focus-visible, .btn:focus-visible {
 .hero-text {
     padding: 2rem 1rem;
     font-size: clamp(1.1rem, 1rem + 1vw, 1.5rem);
+    font-weight: 500;
 }
 
 /* ---------- Cards ---------- */
