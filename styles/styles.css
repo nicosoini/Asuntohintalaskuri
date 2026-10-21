@@ -8,6 +8,8 @@
   --bg: #ffffff;
   --radius: 14px;
   --max: 1000px;
+  --page-width: 90rem;
+  --page-gutter: 2rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -38,6 +40,7 @@ a:focus-visible, .btn:focus-visible {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.75rem clamp(1rem, 4vw, 3rem);
+  padding-inline: 0;
 }
 
 .logo {
@@ -87,8 +90,7 @@ a:focus-visible, .btn:focus-visible {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 420px;
-  margin: 0 clamp(1rem, 4vw, 3rem);
+  min-height: 26rem;
   border-radius: var(--radius);
   overflow: hidden;
   display: grid;
@@ -143,6 +145,14 @@ a:focus-visible, .btn:focus-visible {
 }
 .hero-dot.is-active { background: #fff; }
 
+.site-header,
+.hero,
+.card,
+.site-footer {
+  width: min(100% - 2 * var(--page-gutter), var(--page-width));
+  margin-inline: auto;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .hero-slide { transition: none; }
@@ -172,7 +182,7 @@ a:focus-visible, .btn:focus-visible {
 
 /* ---------- Cards ---------- */
 .card {
-  max-width: var(--max);
+  max-width: none;
   margin-block: 3rem 0;
   margin-inline: clamp(1rem, 5vw, 3rem);
   padding: clamp(1.5rem, 4vw, 2.5rem);
