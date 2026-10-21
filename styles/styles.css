@@ -308,6 +308,10 @@ main > .card:last-child { margin-bottom: 3rem; }
     font-size: 0.8rem;
     max-width: 8.5rem;             /* text wraps to 2 lines instead of overflowing */
   }
+
+  .card {
+    text-align: center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -315,5 +319,6 @@ main > .card:last-child { margin-bottom: 3rem; }
 }
 
 @media (min-width: 1100px) {
-  .card { margin-inline: auto; }
+  .card {margin-inline: auto; }
+
 }
