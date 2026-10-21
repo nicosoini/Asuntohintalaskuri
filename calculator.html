@@ -37,18 +37,18 @@
                         <label for="kaupunki">Sijainti</label>
                         <select id="kaupunki" name="kaupunki" required>
                             <option value="" selected disabled>Valitse kaupunki</option>
-                            <option value="helsinki">Helsinki</option>
-                            <option value="espoo">Espoo</option>
-                            <option value="vantaa">Vantaa</option>
-                            <option value="tampere">Tampere</option>
-                            <option value="turku">Turku</option>
-                            <option value="oulu">Oulu</option>
+                            <option value=1>Helsinki</option>
+                            <option value=2>Espoo</option>
+                            <option value=3>Tampere</option>
+                            <option value=4>Turku</option>
+                            <option value=5>Oulu</option>
+                            <option value=6>Jyväskylä</option>
                         </select>
                     </div>
 
                     <div class="field">
                         <label for="postinumero">Postinumero</label>
-                        <input id="postinumero" name="postinumero" type="text"
+                        <input id="postinumero" name="postinumero" type="number"
                             inputmode="numeric" pattern="[0-9]{5}" maxlength="5"
                             placeholder="Anna postinumero" required>
                     </div>
@@ -61,14 +61,24 @@
                     </div>
 
                     <div class="field">
+                        <label for="rakennus">Rakennuksen tyyppi</label>
+                        <select id="rakennus" name="rakennus" required>
+                            <option value="" selected disabled>Valitse rakennuksen tyyppi</option>
+                            <option value=1>Kerrostalo</option>
+                            <option value=2>Rivitalo</option>
+                            <option value=3>Omakotitalo</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
                         <label for="huoneet">Huonemäärä</label>
                         <select id="huoneet" name="huoneet" required>
                             <option value="" selected disabled>Valitse huonemäärä</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 tai enemmän</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5 tai enemmän</option>
                         </select>
                     </div>
 
@@ -76,12 +86,12 @@
                         <label for="kerros">Asuinkerros</label>
                         <select id="kerros" name="kerros" required>
                             <option value="" selected disabled>Valitse kerros</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6 tai ylempi</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                            <option value=6>6 tai ylempi</option>
                         </select>
                     </div>
 
@@ -92,37 +102,47 @@
                             placeholder="Anna rakennusvuosi" required>
                     </div>
 
-                    <fieldset class="field">
-                        <legend>Tontti</legend>
-                        <div class="check-list">
-                            <label class="check">
-                                <span>Oma tontti</span>
-                                <input type="radio" name="tontti" value="oma">
-                            </label>
+                    <div class="field">
+                        <label for="kunto">Asunnon kunto</label>
+                        <select id="kunto" name="kunto" required>
+                            <option value="" selected disabled>Valitse asunnon kunto</option>
+                            <option value=4>Erinomainen</option>
+                            <option value=3>Hyvä</option>
+                            <option value=2>Tyydyttävä</option>
+                            <option value=1>Huono</option>
+                        </select>
+                    </div>
 
-                            <label class="check">
-                                <span>Vuokratontti</span>
-                                <input type="radio" name="tontti" value="vuokra">
-                            </label>
-                        </div>
-                    </fieldset>
+                    <div class="field">
+                        <label for="tontti">Tontti</label>
+                        <select id="tontti" name="tontti" required>
+                            <option value="" selected disabled>Valitse tontin tyyppi</option>
+                            <option value=1>Omistustontti</option>
+                            <option value=0>Vuokratontti</option>
+                        </select>
+                    </div>
 
                     <fieldset class="field">
                         <legend>Lisäominaisuudet</legend>
                         <div class="check-list">
                             <label class="check">
                                 <span>Hissi</span>
-                                <input type="checkbox" name="lisat" value="hissi">
+                                <input type="checkbox" name="lisat" value=1>
                             </label>
 
                             <label class="check">
                                 <span>Parveke</span>
-                                <input type="checkbox" name="lisat" value="parveke">
+                                <input type="checkbox" name="lisat" value=1>
                             </label>
 
                             <label class="check">
                                 <span>Sauna</span>
-                                <input type="checkbox" name="lisat" value="sauna">
+                                <input type="checkbox" name="lisat" value=1>
+                            </label>
+
+                            <label class="check">
+                                <span>Autopaikka</span>
+                                <input type="checkbox" name="lisat" value=1>
                             </label>
                         </div>
                     </fieldset>
