@@ -8,6 +8,8 @@
   --bg: #ffffff;
   --radius: 14px;
   --max: 1000px;
+  --page-width: 90rem;
+  --page-gutter: 2rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -33,16 +35,22 @@ a:focus-visible, .btn:focus-visible {
 
 /* ---------- Header ---------- */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  box-shadow: 0 6px 24px rgba(3, 60, 75, 0.15);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.75rem clamp(1rem, 4vw, 3rem);
+  padding: 0.4rem clamp(1rem, 4vw, 3rem);
 }
 
 .logo {
     display: flex;
-    height: 5rem;
+    height: 3rem;
     width: auto;
 }
 
@@ -58,8 +66,9 @@ a:focus-visible, .btn:focus-visible {
 
 .site-name {
     margin: 0;
-    font-size: clamp(1rem, 0.9rem + 1vw, 1.4rem);
+    font-size: clamp(1rem, 0.9rem + 1vw, 1.2rem);
     font-weight: 600;
+    color: #5b88a0;
 }
 
 /* ---------- Buttons ---------- */
@@ -79,7 +88,7 @@ a:focus-visible, .btn:focus-visible {
 }
 
 .btn-small {
-    padding: 1.5rem 1.25rem;
+    padding: 1.0rem 1.25rem;
     font-size: 0.9rem;
 
 }
@@ -87,8 +96,7 @@ a:focus-visible, .btn:focus-visible {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 420px;
-  margin: 0 clamp(1rem, 4vw, 3rem);
+  min-height: 26rem;
   border-radius: var(--radius);
   overflow: hidden;
   display: grid;
@@ -143,6 +151,14 @@ a:focus-visible, .btn:focus-visible {
 }
 .hero-dot.is-active { background: #fff; }
 
+.site-header,
+.hero,
+.card,
+.site-footer {
+  width: min(100% - 2 * var(--page-gutter), var(--page-width));
+  margin-inline: auto;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .hero-slide { transition: none; }
@@ -168,11 +184,12 @@ a:focus-visible, .btn:focus-visible {
 .hero-text {
     padding: 2rem 1rem;
     font-size: clamp(1.1rem, 1rem + 1vw, 1.5rem);
+    font-weight: 500;
 }
 
 /* ---------- Cards ---------- */
 .card {
-  max-width: var(--max);
+  max-width: none;
   margin-block: 3rem 0;
   margin-inline: clamp(1rem, 5vw, 3rem);
   padding: clamp(1.5rem, 4vw, 2.5rem);
@@ -308,6 +325,10 @@ main > .card:last-child { margin-bottom: 3rem; }
     font-size: 0.8rem;
     max-width: 8.5rem;             /* text wraps to 2 lines instead of overflowing */
   }
+
+  .card {
+    text-align: center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -315,5 +336,6 @@ main > .card:last-child { margin-bottom: 3rem; }
 }
 
 @media (min-width: 1100px) {
-  .card { margin-inline: auto; }
+  .card {margin-inline: auto; }
+
 }
